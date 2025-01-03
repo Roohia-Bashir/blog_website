@@ -2,21 +2,16 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
 import { ArrowLeft } from 'lucide-react'
-import Image from "next/image" // Import the Image component
 
 export default function ImpactPage() {
   return (
     <div className="min-h-screen relative flex items-center justify-center p-4 bg-[#4f4f50]">
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat">
-        {/* Using Image for background optimization, if needed */}
-        <Image
-          src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2072&auto=format&fit=crop"
-          alt="Background image"
-          layout="fill" // Makes the image cover the div
-          objectFit="cover"
-          objectPosition="center"
-          priority
-        />
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2072&auto=format&fit=crop")',
+        }}
+      >
         <div className="absolute inset-0 bg-[#252427]/90" />
       </div>
 
@@ -42,9 +37,9 @@ export default function ImpactPage() {
             
             <div className="space-y-4 text-[#777775]">
               <p>
-                Our work in AI extends beyond technological advancement – we're committed to creating 
-                positive change on a global scale. Through our solutions, we're addressing some of 
-                the world's most pressing challenges.
+                Our work in AI extends beyond technological advancement and we are committed to creating 
+                positive change on a global scale. Through our solutions, we are addressing some of 
+                the worlds most pressing challenges.
               </p>
               
               <div className="grid gap-4 sm:grid-cols-2 mt-6">
@@ -70,3 +65,4 @@ export default function ImpactPage() {
     </div>
   )
 }
+
