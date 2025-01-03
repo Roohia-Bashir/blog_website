@@ -2,16 +2,21 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
 import { ArrowLeft } from 'lucide-react'
+import Image from "next/image" // Import the Image component
 
 export default function InnovationPage() {
   return (
     <div className="min-h-screen relative flex items-center justify-center p-4 bg-[#4f4f50]">
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2072&auto=format&fit=crop")',
-        }}
-      >
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat">
+        {/* Using Image for background optimization */}
+        <Image
+          src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2072&auto=format&fit=crop"
+          alt="Innovation background"
+          layout="fill" // Makes the image cover the div
+          objectFit="cover"
+          objectPosition="center"
+          priority
+        />
         <div className="absolute inset-0 bg-[#252427]/90" />
       </div>
 
@@ -65,4 +70,3 @@ export default function InnovationPage() {
     </div>
   )
 }
-
